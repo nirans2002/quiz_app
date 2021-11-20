@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/theme/theme.dart';
 
 import 'screens/splash_screen.dart';
 
@@ -13,11 +14,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Quiz App',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const SplashScreen(),
       debugShowCheckedModeBanner: false,
+      theme: lightThemeData(context),
+      darkTheme: darkThemeData(context),
+      // themeMode: ThemeMode.dark,
+      // themeMode: ThemeMode.light,
+      themeMode: ThemeMode.system,
+      home: const SplashScreen(),
     );
   }
 }
