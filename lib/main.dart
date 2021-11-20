@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/screens/home_screen.dart';
 import 'package:quiz_app/theme/theme.dart';
 
 import 'screens/splash_screen.dart';
@@ -20,7 +21,10 @@ class MyApp extends StatelessWidget {
       // themeMode: ThemeMode.dark,
       // themeMode: ThemeMode.light,
       themeMode: ThemeMode.system,
-      home: const SplashScreen(),
+      // home: const SplashScreen(),
+      // TODO: redirect to splash screen
+      // redirecting to HomeScreen for debugging purpose
+      home: const HomeScreen(),
     );
   }
 }

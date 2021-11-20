@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/services/api.dart';
 import 'package:quiz_app/theme/theme.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -8,7 +9,15 @@ class HomeScreen extends StatefulWidget {
   _HomeScreenState createState() => _HomeScreenState();
 }
 
+
+
 class _HomeScreenState extends State<HomeScreen> {
+   @override
+  void initState() {
+    apicall();
+    super.initState();
+  }
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,12 +32,9 @@ class _HomeScreenState extends State<HomeScreen> {
               width: 300,
               child: Text("data"),
             ),
-            Container(
-              color: cardColor,
-              width: 300,
-              child: Text("data"),
-            ),
           ],
         )));
   }
 }
+
+
