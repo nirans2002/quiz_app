@@ -22,21 +22,23 @@ class QstnModel {
     required this.tip,
     required this.category,
     required this.difficulty,
+    required this.answers,
     // this.tags,
   });
 
-  factory QstnModel.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
-    question = json['question'];
-    description = json['description'];
-    multiple_correct_answers = json['multiple_correct_answers'];
-    correctanswer = json['correct_answer'];
-    explanation = json['explanation'];
-    tip = json['tip'];
-    category = json['category'];
-    difficulty = json['difficulty'];
-    //TODO: answers,tags,correct answers
-  }
+//   factory QstnModel.fromJson(Map<String, dynamic> json) {
+//     return QstnModel()
+//     id : json['id'];
+//     question : json['question'];
+//     description : json['description'];
+//     multiple_correct_answers : json['multiple_correct_answers'];
+//     correctanswer : json['correct_answer'];
+//     explanation : json['explanation'];
+//     tip : json['tip'];
+//     category : json['category'];
+//     difficulty : json['difficulty'];
+//     //TODO: answers,tags,correct answers
+//   }
 }
 
 class Answers {
@@ -66,4 +68,32 @@ class Answers {
       answerF: json['answer_f'],
     );
   }
+}
+
+class CorrectAnswers {
+  String answerACorrect;
+  String answerBCorrect;
+  String answerCCorrect;
+  String answerDCorrect;
+  String answerECorrect;
+  String answerFCorrect;
+
+  CorrectAnswers(
+    {
+    required this.answerACorrect,
+    required this.answerBCorrect,
+    required this.answerCCorrect,
+    required this.answerDCorrect,
+    required this.answerECorrect,
+    required this.answerFCorrect,
+  });
+  factory CorrectAnswers.fromJson(Map<String, dynamic> json) {
+    return CorrectAnswers(
+    answerACorrect : json['answer_a_correct'],
+    answerBCorrect : json['answer_b_correct'],
+    answerCCorrect : json['answer_c_correct'],
+    answerDCorrect : json['answer_d_correct'],
+    answerECorrect : json['answer_e_correct'],
+    answerFCorrect : json['answer_f_correct'],
+    );}
 }
