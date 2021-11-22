@@ -9,15 +9,13 @@ class HomeScreen extends StatefulWidget {
   _HomeScreenState createState() => _HomeScreenState();
 }
 
-
-
 class _HomeScreenState extends State<HomeScreen> {
-   @override
+  @override
   void initState() {
-    apicall();
+    // apicall();
     super.initState();
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,9 +30,12 @@ class _HomeScreenState extends State<HomeScreen> {
               width: 300,
               child: Text("data"),
             ),
+            Center(
+                child: ElevatedButton(
+              onPressed: apicall,
+              child: Text("apicall"),
+            ))
           ],
         )));
   }
 }
-
-
