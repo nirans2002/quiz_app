@@ -2,7 +2,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-// import 'package:quiz_app/database/models/qstn_model.dart';
+import 'package:quiz_app/database/models/qstn_model.dart';
 
 Future apicall() async {
   http.Response response;
@@ -14,6 +14,12 @@ Future apicall() async {
   if (response.statusCode == 200) {
     List questionsList;
     questionsList = jsonDecode(response.body);
-    print(questionsList[0]);
+    // print(questionsList[0]);
+    datatest(questionsList);
   }
+}
+
+datatest(questionsList) async {
+  QstnModel question = QstnModel.fromJson(questionsList[0]);
+  print(question);
 }

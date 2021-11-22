@@ -8,7 +8,7 @@ class QstnModel {
   String correctanswer;
   String explanation;
   String tip;
-  // List<Tags> tags;
+  List<Tags> tags;
   String category;
   String difficulty;
 
@@ -24,23 +24,23 @@ class QstnModel {
     required this.difficulty,
     required this.answers,
     required this.correctanswer,
-    // this.tags,
+    required this.tags,
   });
 
   factory QstnModel.fromJson(Map<String, dynamic> json) {
     return QstnModel(
-    id : json['id'],
-    question : json['question'],
-    description : json['description'],
-    multiple_correct_answers : json['multiple_correct_answers'],
-    correctanswers : json['correct_answers'],
-    explanation : json['explanation'],
-    tip : json['tip'],
-    category : json['category'],
-    difficulty : json['difficulty'],
-    answers : json['answers'],
-    correctanswer : json['correct_answer'],
-    // tags : json['tags'],
+      id: json['id'],
+      question: json['question'],
+      description: json['description'],
+      multiple_correct_answers: json['multiple_correct_answers'],
+      correctanswers: json['correct_answers'],
+      explanation: json['explanation'],
+      tip: json['tip'],
+      category: json['category'],
+      difficulty: json['difficulty'],
+      answers: json['answers'],
+      correctanswer: json['correct_answer'],
+      tags: json['tags'],
     );
   }
 }
@@ -50,8 +50,8 @@ class Answers {
   String answerB;
   String answerC;
   String answerD;
-  Null answerE;
-  Null answerF;
+  String? answerE;
+  String? answerF;
 
   Answers({
     required this.answerA,
@@ -99,5 +99,13 @@ class CorrectAnswers {
       answerECorrect: json['answer_e_correct'],
       answerFCorrect: json['answer_f_correct'],
     );
+  }
+}
+
+class Tags {
+  final String name;
+  Tags({required this.name});
+  factory Tags.fromJson(Map<String, dynamic> json) {
+    return Tags(name: json['name']);
   }
 }
