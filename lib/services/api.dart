@@ -14,12 +14,7 @@ Future apicall() async {
   if (response.statusCode == 200) {
     List questionsList;
     questionsList = jsonDecode(response.body);
-    // print(questionsList[0]);
-    datatest(questionsList);
+    print(questionsList[0]['question']);
+    print(questionsList[0]['answers']);
   }
-}
-
-datatest(questionsList) async {
-  QstnModel question = QstnModel.fromJson(questionsList[0]);
-  print(question);
 }
