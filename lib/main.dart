@@ -18,9 +18,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: lightThemeData(context),
       darkTheme: darkThemeData(context),
-      // themeMode: ThemeMode.dark,
+      themeMode: ThemeMode.dark,
       // themeMode: ThemeMode.light,
-      themeMode: ThemeMode.system,
+      // themeMode: ThemeMode.system,
       // home: const SplashScreen(),
       // TODO: redirect to splash screen
       // redirecting to HomeScreen for debugging purpose
