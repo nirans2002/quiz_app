@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/components/bottom_sheet.dart';
 import 'package:quiz_app/screens/home_screen.dart';
 import 'package:quiz_app/theme/theme.dart';
 
@@ -18,13 +19,12 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: lightThemeData(context),
       darkTheme: darkThemeData(context),
-      themeMode: ThemeMode.dark,
-      // themeMode: ThemeMode.light,
+      themeMode: ThemeMode.dark, // themeMode: ThemeMode.light,
       // themeMode: ThemeMode.system,
-      // home: const SplashScreen(),
+      home: const SplashScreen(),
       // TODO: redirect to splash screen
       // redirecting to HomeScreen for debugging purpose
-      home: const HomeScreen(),
+      // home: HomeScreen(),
     );
   }
 }
