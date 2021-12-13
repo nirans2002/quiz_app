@@ -1,71 +1,49 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
-import 'package:glassmorphism/glassmorphism.dart';
-import 'dart:ui';
+import 'package:glassmorphism_ui/glassmorphism_ui.dart';
+
+import 'Category_tile.dart';
 
 Future<dynamic> show_bottom_sheet_category(BuildContext context) {
+  // String selected_category;
+  // String image_url;
   return showModalBottomSheet(
       context: context,
-      backgroundColor: Colors.transparent,
-      barrierColor: Colors.transparent,
+      backgroundColor: Color.fromRGBO(20, 20, 20, 0.5),
+      barrierColor: Colors.black45,
       builder: (context) {
-        return GlassmorphicContainer(
-          width: 350,
-          height: 350,
-          borderRadius: 20,
-          blur: 20,
-          alignment: Alignment.bottomCenter,
-          border: 2,
-          linearGradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [
-                Color(0xFFffffff).withOpacity(0.1),
-                Color(0xFFFFFFFF).withOpacity(0.05),
+        return GlassContainer(
+          // height: ,
+          blur: 3,
+          shadowStrength: 20,
+          opacity: 0.05,
+          width: max(MediaQuery.of(context).size.width,
+              MediaQuery.of(context).size.height),
+          borderRadius: BorderRadius.circular(40),
+          child: Center(
+            child: GridView.count(
+              crossAxisCount: 2,
+              children: [
+                Category_tile("javascript", "JavaScript", context,
+                    "assets/images/js.png"),
+                Category_tile(
+                    "mysql", "MySQL", context, "assets/images/py.png"),
+                Category_tile(
+                    "laravel", "Laravel", context, "assets/images/py.png"),
+                Category_tile(
+                    "laravel", "Laravel", context, "assets/images/py.png"),
+                Category_tile(
+                    "linux", "Linux", context, "assets/images/py.png"),
+                Category_tile(
+                    "wordpress", "WordPress", context, "assets/images/py.png"),
+                Category_tile("php", "PHP", context, "assets/images/py.png"),
+                Category_tile(
+                    "devops", "DevOps", context, "assets/images/py.png"),
+                Category_tile(
+                    "docker", "Docker", context, "assets/images/py.png"),
               ],
-              stops: [
-                0.1,
-                1,
-              ]),
-          borderGradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [
-              Color(0xFFffffff).withOpacity(0.5),
-              Color((0xFFFFFFFF)).withOpacity(0.5),
-            ],
-          ),
-          child: Column(
-            // mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              ListTile(
-                leading: new Icon(Icons.photo),
-                title: new Text('Photo'),
-                onTap: () {
-                  Navigator.pop(context);
-                },
-              ),
-              ListTile(
-                leading: new Icon(Icons.music_note),
-                title: new Text('Music'),
-                onTap: () {
-                  Navigator.pop(context);
-                },
-              ),
-              ListTile(
-                leading: new Icon(Icons.videocam),
-                title: new Text('Video'),
-                onTap: () {
-                  Navigator.pop(context);
-                },
-              ),
-              ListTile(
-                leading: new Icon(Icons.share),
-                title: new Text('Share'),
-                onTap: () {
-                  Navigator.pop(context);
-                },
-              ),
-            ],
+            ),
           ),
         );
       });
