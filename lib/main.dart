@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app/components/bottom_sheet.dart';
+import 'package:quiz_app/components/category_bottom_sheet.dart';
 import 'package:quiz_app/screens/home_screen.dart';
 import 'package:quiz_app/theme/theme.dart';
 

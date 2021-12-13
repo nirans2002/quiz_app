@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:glassmorphism/glassmorphism.dart';
-import 'package:quiz_app/components/bottom_sheet.dart';
+import 'package:quiz_app/components/category_bottom_sheet.dart';
 import 'package:quiz_app/services/api.dart';
 import 'package:quiz_app/theme/theme.dart';
 // import 'package:quiz_app/components/bottom_sheet.dart';
