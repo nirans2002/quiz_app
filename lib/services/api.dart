@@ -15,6 +15,6 @@ Future apicall() async {
     List questionsList;
     questionsList = jsonDecode(response.body);
     print(questionsList[0]['question']);
-    print(questionsList[0]['answers']);
+    print(questionsList[0]['correct_answer']);
   }
 }

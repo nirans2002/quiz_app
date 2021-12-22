@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 //TODO: costumize colors and defaults
-const primaryColor = Colors.deepPurpleAccent;
+const primaryColor = Color(0xFF6066D0);
 const cardColor = Color(0xFF9E9E9E);
-const secondaryColor = Colors.deepPurple;
+const secondaryColor = Color(0xFFFCA82F);
 const contentColorLightTheme = Color(0xFF1D1D35);
 const contentColorDarkTheme = Color(0xFFF5FCF9);
 const warninngColor = Colors.red;
 const errorColor = Color(0xFFF03738);
-const scaffoldBackgroundColor = Color(0xFF290A36);
+const scaffoldBackgroundColor = Color(0xFF5C1063);
 
 const defaultPadding = 20.0;
 
