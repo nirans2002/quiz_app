@@ -28,20 +28,20 @@ Future<dynamic> show_bottom_sheet_category(BuildContext context) {
                 Category_tile("javascript", "JavaScript", context,
                     "assets/images/js.png"),
                 Category_tile(
-                    "mysql", "MySQL", context, "assets/images/py.png"),
+                    "mysql", "MySQL", context, "assets/images/mysql.png"),
                 Category_tile(
-                    "laravel", "Laravel", context, "assets/images/py.png"),
+                    "laravel", "Laravel", context, "assets/images/laravel.png"),
                 Category_tile(
-                    "laravel", "Laravel", context, "assets/images/py.png"),
+                    "laravel", "Laravel", context, "assets/images/laravel.png"),
                 Category_tile(
-                    "linux", "Linux", context, "assets/images/py.png"),
+                    "linux", "Linux", context, "assets/images/linux.png"),
                 Category_tile(
-                    "wordpress", "WordPress", context, "assets/images/py.png"),
-                Category_tile("php", "PHP", context, "assets/images/py.png"),
+                    "wordpress", "WordPress", context, "assets/images/js.png"),
+                Category_tile("php", "PHP", context, "assets/images/js.png"),
                 Category_tile(
-                    "devops", "DevOps", context, "assets/images/py.png"),
+                    "devops", "DevOps", context, "assets/images/js.png"),
                 Category_tile(
-                    "docker", "Docker", context, "assets/images/py.png"),
+                    "docker", "Docker", context, "assets/images/js.png"),
               ],
             ),
           ),

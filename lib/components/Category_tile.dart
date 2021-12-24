@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'difficulty_bottom_sheet.dart';
+
 Padding Category_tile(String selected_category, String Title,
     BuildContext context, String image_url) {
   return Padding(
@@ -8,10 +10,11 @@ Padding Category_tile(String selected_category, String Title,
       onTap: () {
         selected_category;
         Navigator.pop(context);
+        show_bottom_sheet_difficulty(context);
         print(selected_category);
       },
       child: Container(
-        padding: EdgeInsets.all(8),
+        padding: EdgeInsets.all(16),
         height: 20,
         width: 20,
         decoration: BoxDecoration(

@@ -18,9 +18,10 @@ class _SplashScreenState extends State<SplashScreen> {
   Future<void> gohome() async {
     // navigates to the home page after provided time of 2 seconds
     await Future.delayed(const Duration(seconds: 2));
-    Navigator.of(context).push(
+    Navigator.pushReplacement(
+      context,
       MaterialPageRoute(
-        builder: (cntxt) => const HomeScreen(),
+        builder: (context) => HomeScreen(),
       ),
     );
   }
