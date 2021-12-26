@@ -11,9 +11,12 @@ Padding Difficulty_tile(String difficulty, String Title, BuildContext context) {
     child: InkWell(
       onTap: () {
         url_data_difficulty(difficulty);
-        getValue();
-        // apicall();
-        Navigator.push(context,MaterialPageRoute(builder: (context) => Quiz_screen(),
+        // getValue();
+        apicall();
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => Quiz_screen(),
           ),
         );
       },

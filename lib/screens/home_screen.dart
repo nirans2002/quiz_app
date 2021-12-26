@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:glassmorphism/glassmorphism.dart';
 import 'package:quiz_app/components/category_bottom_sheet.dart';
+import 'package:quiz_app/services/api.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -53,6 +54,16 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
+              ElevatedButton(
+                onPressed: () {
+                  apicall();
+                },
+                child: Text(
+                  "api",
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+              
             ],
           ),
         ),
