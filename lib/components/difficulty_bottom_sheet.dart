@@ -22,7 +22,20 @@ Future<dynamic> show_bottom_sheet_difficulty(BuildContext context) {
           child: Center(
             child: Builder(builder: (context) {
               return Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  Padding(
+                    padding: const EdgeInsets.all(32.0),
+                    child: SizedBox(
+                      // height: 20,
+                      child: Text("Select Difficulty",
+                          style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white)),
+                    ),
+                  ),
                   Difficulty_tile("easy", "Easy", context),
                   Difficulty_tile(
                     "medium",

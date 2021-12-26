@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:quiz_app/services/url_data.dart';
 
 import 'difficulty_bottom_sheet.dart';
 
-Padding Category_tile(String selected_category, String Title,
-    BuildContext context, String image_url) {
+Padding Category_tile(String category, String Title, BuildContext context, String image_url) {
+    
   return Padding(
     padding: const EdgeInsets.all(16.0),
     child: InkWell(
       onTap: () {
-        selected_category;
+        url_data_category(category);
         Navigator.pop(context);
         show_bottom_sheet_difficulty(context);
-        print(selected_category);
       },
       child: Container(
         padding: EdgeInsets.all(16),
