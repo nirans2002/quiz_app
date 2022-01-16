@@ -2,9 +2,12 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
+import 'package:quiz_app/database/models/qstn_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 Future apicall() async {
+    List questionsList;
+
   SharedPreferences url_data_pref = await SharedPreferences.getInstance();
 
   String? selected_difficulty =
@@ -20,10 +23,15 @@ Future apicall() async {
   );
   print(response.statusCode);
   if (response.statusCode == 200) {
-    List questionsList;
     questionsList = jsonDecode(response.body);
-    print(questionsList[0]['question']);
-    print(questionsList[0]['correct_answer']);
+
+   
+}
+    // return questionsList;
+    // print(questionsList[0]['question']);
+    // print(questionsList[0]['correct_answer']);
     // print('$selected_category  $selected_difficulty');
   } 
-}
+
+
+

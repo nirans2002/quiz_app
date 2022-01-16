@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/components/logo.dart';
 import 'package:quiz_app/screens/home_screen.dart';
-import 'package:quiz_app/screens/results_screen.dart';
-import 'package:quiz_app/theme/theme.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -34,35 +33,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       body: SafeArea(
         child: Center(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              Text(
-                'Q',
-                style: TextStyle(
-                  color: primaryColor,
-                  fontSize: 35,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              Text(
-                'uiz ',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 35,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              Text(
-                'App',
-                style: TextStyle(
-                  color: secondaryColor,
-                  fontSize: 35,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ],
-          ),
+          child: logo(),
           // child: Text("splash screen"),
           //TODO: add logo
         ),
@@ -70,3 +41,5 @@ class _SplashScreenState extends State<SplashScreen> {
     );
   }
 }
+
+

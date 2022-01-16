@@ -37,16 +37,8 @@ Future<dynamic> show_bottom_sheet_difficulty(BuildContext context) {
                     ),
                   ),
                   Difficulty_tile("easy", "Easy", context),
-                  Difficulty_tile(
-                    "medium",
-                    "Medium",
-                    context,
-                  ),
-                  Difficulty_tile(
-                    "hard",
-                    "Hard",
-                    context,
-                  ),
+                  Difficulty_tile("medium", "Medium", context),
+                  Difficulty_tile("hard", "Hard", context),
                 ],
               );
             }),
