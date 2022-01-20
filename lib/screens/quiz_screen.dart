@@ -1,10 +1,11 @@
-import 'package:flutter/material.dart';
-import 'package:quiz_app/services/api.dart';
-import 'package:quiz_app/theme/theme.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
 
+import 'package:flutter/material.dart';
+import 'package:quiz_app/database/models/qstn_model.dart';
+import 'package:quiz_app/services/api.dart';
+import 'package:quiz_app/theme/theme.dart';
 import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Quiz_screen extends StatefulWidget {
   const Quiz_screen({Key? key}) : super(key: key);
@@ -22,13 +23,14 @@ class _Quiz_screenState extends State<Quiz_screen> {
   }
 
   @override
+  // List qp_list = [];
+
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: Column(
           children: [
             //time
-            // ElevatedButton(onPressed: (), child: Text('fetche')),
             Container(
               height: 40,
               child: Center(
@@ -41,6 +43,8 @@ class _Quiz_screenState extends State<Quiz_screen> {
                 ),
               ),
             ),
+
+            ElevatedButton(onPressed: call_api(qp_list), child: Text('fetch')),
             // progress bar
 
             LinearProgressIndicator(
@@ -73,3 +77,7 @@ class _Quiz_screenState extends State<Quiz_screen> {
     );
   }
 }
+
+// call_api(qp_list) {
+//   fetchData(qp_list);
+// }

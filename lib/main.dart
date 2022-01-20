@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'screens/quiz_screen.dart';
 import 'theme/theme.dart';
 
 import 'screens/splash_screen.dart';

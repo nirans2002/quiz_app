@@ -2,7 +2,7 @@ class QstnModel {
   int id;
   String question;
   String description;
-  Answers answers;
+  // Answers answers;
   String multiple_correct_answers;
   CorrectAnswers correctanswers;
   String correctanswer;
@@ -22,7 +22,7 @@ class QstnModel {
     required this.tip,
     required this.category,
     required this.difficulty,
-    required this.answers,
+    // required this.answers,
     required this.correctanswer,
     required this.tags,
   });
@@ -38,41 +38,41 @@ class QstnModel {
       tip: json['tip'],
       category: json['category'],
       difficulty: json['difficulty'],
-      answers: json['answers'],
+      // answers: json['answers'],
       correctanswer: json['correct_answer'],
       tags: json['tags'],
     );
   }
 }
 
-class Answers {
-  String answerA;
-  String answerB;
-  String answerC;
-  String answerD;
-  String? answerE;
-  String? answerF;
+// class Answers {
+//   String answerA;
+//   String answerB;
+//   String answerC;
+//   String answerD;
+//   String? answerE;
+//   String? answerF;
 
-  Answers({
-    required this.answerA,
-    required this.answerB,
-    required this.answerC,
-    required this.answerD,
-    required this.answerE,
-    required this.answerF,
-  });
+//   Answers({
+//     required this.answerA,
+//     required this.answerB,
+//     required this.answerC,
+//     required this.answerD,
+//     required this.answerE,
+//     required this.answerF,
+//   });
 
-  factory Answers.fromJson(Map<String, dynamic> json) {
-    return Answers(
-      answerA: json['answer_a'],
-      answerB: json['answer_b'],
-      answerC: json['answer_c'],
-      answerD: json['answer_d'],
-      answerE: json['answer_e'],
-      answerF: json['answer_f'],
-    );
-  }
-}
+//   factory Answers.fromJson(Map<String, dynamic> json) {
+//     return Answers(
+//       answerA: json['answer_a'],
+//       answerB: json['answer_b'],
+//       answerC: json['answer_c'],
+//       answerD: json['answer_d'],
+//       answerE: json['answer_e'],
+//       answerF: json['answer_f'],
+//     );
+//   }
+// }
 
 class CorrectAnswers {
   String answerACorrect;

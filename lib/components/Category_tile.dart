@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:quiz_app/services/url_data.dart';
 
 import 'difficulty_bottom_sheet.dart';

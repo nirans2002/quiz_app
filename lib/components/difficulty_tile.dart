@@ -12,7 +12,7 @@ Padding Difficulty_tile(String difficulty, String Title, BuildContext context) {
       onTap: () {
         url_data_difficulty(difficulty);
         // getValue();
-        apicall();
+        // apicall();
         Navigator.push(
           context,
           MaterialPageRoute(
