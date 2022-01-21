@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/database/data_sample.dart';
 import 'package:quiz_app/theme/theme.dart';
 
 class ResultScreen extends StatefulWidget {
@@ -7,6 +8,8 @@ class ResultScreen extends StatefulWidget {
   @override
   _ResultScreenState createState() => _ResultScreenState();
 }
+
+List result = resultData;
 
 class _ResultScreenState extends State<ResultScreen> {
   @override
@@ -46,9 +49,9 @@ class _ResultScreenState extends State<ResultScreen> {
                   scrollDirection: Axis.vertical,
                   shrinkWrap: true,
                   crossAxisCount: 4,
-                  children: List.generate(20, (index) {
+                  children: List.generate(result.length, (index) {
                     return Center(
-                      child: Result_tile(index, true),
+                      child: Result_tile(index, result[index]),
                     );
                   }),
                 ),

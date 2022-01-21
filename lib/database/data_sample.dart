@@ -480,3 +480,26 @@ const dataSample = [
     "difficulty": "Medium"
   }
 ];
+
+List resultData = [
+  true,
+  false,
+  false,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  false,
+  false,
+  true,
+  false,
+  false,
+  true,
+  true,
+  false,
+  false,
+  true,
+  true,
+];
