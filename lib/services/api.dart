@@ -1,19 +1,20 @@
-// APIKEY= 0VeurWECWRQgSX1Ib9DdCrVSsvkGH2TysmCJeg3p
 import 'dart:convert';
 
+import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:quiz_app/database/models/qstn_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-Future fetchData(List<QstnModel> questionsList) async {
-  // List<QstnModel> questionsList = [];
-  // String data = '';
+const APIKEY = '0VeurWECWRQgSX1Ib9DdCrVSsvkGH2TysmCJeg3p';
+
+Future fetchData(listModel) async {
   SharedPreferences url_data_pref = await SharedPreferences.getInstance();
 
   String? selected_difficulty =
       url_data_pref.getString('selected_difficulty').toString().trim();
   String? selected_category =
       url_data_pref.getString('selected_category').toString().trim();
+  List<Question> dataList = [];
 
   http.Response response;
   response = await http.get(
@@ -26,56 +27,31 @@ Future fetchData(List<QstnModel> questionsList) async {
   );
   print(response.statusCode);
   if (response.statusCode == 200) {
-    var jsonResponse = json.decode(response.body);
-    print(response.body);
-    for (var data in jsonResponse) {
-      questionsList.add(new QstnModel(
-        id: data['id'],
-        // answers: data['answers'],
-        category: data['category'],
-        correctanswer: data['correct_answer'],
-        correctanswers: data['correct_answers'],
-        description: data['description'],
-        difficulty: data['difficulty'],
-        explanation: data['explanation'],
-        multiple_correct_answers: data['multiple_correct_answers'],
-        question: data['question'],
-        tags: data['tags'],
-        tip: data['tip'],
-      ));
+    var data = json.decode(response.body);
+    for (Map<String, dynamic> i in data) {
+      dataList.add(Question.fromJson(i));
     }
+    listModel = dataList;
   }
-
-  // questionsList = jsonDecode(response.body)
-
-  // print(questionsList[0]['question']);
-  // print(questionsList[0]['correct_answer']);
-  // print('$selected_category  $selected_difficulty');
-// }
-
-// List<QstnModel> jsonProccess(response) {
-//   var jsonResponse = json.decode(response);
-//   List<QstnModel> questionsList = [];
-
-//   for (var data in jsonResponse) {
-//     questionsList.add(new QstnModel(
-//       id: data['id'],
-//       answers: data['answers'],
-//       category: data['category'],
-//       correctanswer: data['correct_answer'],
-//       correctanswers: data['correct_answers'],
-//       description: data['description'],
-//       difficulty: data['difficulty'],
-//       explanation: data['explanation'],
-//       multiple_correct_answers: data['multiple_correct_answers'],
-//       question: data['question'],
-//       tags: data['tags'],
-//       tip: data['tip'],
-//     ));
-//   }
-//   return questionsList;
 }
 
-call_api(qp_list) {
-  fetchData(qp_list);
+String FindCorrectAnswers(CorrectAnswers correctAnswers) {
+  String correct_option = '';
+  debugPrint('find correct answer');
+  // debugPrint(correctAnswers.answer_a_correct);
+  if (correctAnswers.answer_a_correct == "true") {
+    correct_option = 'a';
+  } else if (correctAnswers.answer_b_correct == "true") {
+    correct_option = 'b';
+  } else if (correctAnswers.answer_c_correct == "true") {
+    correct_option = 'c';
+  } else if (correctAnswers.answer_d_correct == "true") {
+    correct_option = 'd';
+  } else if (correctAnswers.answer_e_correct == "true") {
+    correct_option = 'e';
+  } else if (correctAnswers.answer_f_correct == "true") {
+    correct_option = 'f';
+  }
+  debugPrint(correct_option);
+  return correct_option;
 }

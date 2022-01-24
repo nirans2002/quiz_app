@@ -34,8 +34,6 @@ class _SplashScreenState extends State<SplashScreen> {
       body: SafeArea(
         child: Center(
           child: logo(),
-          // child: Text("splash screen"),
-          //TODO: add logo
         ),
       ),
     );
