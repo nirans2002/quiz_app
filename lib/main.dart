@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/screens/results_screen.dart';
+import 'package:quiz_app/services/api_try.dart';
 import 'screens/quiz_screen.dart';
 import 'theme/theme.dart';
 
 import 'screens/splash_screen.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
@@ -21,7 +24,7 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.dark,
       // themeMode: ThemeMode.light,
       // themeMode: ThemeMode.system,
-      home: const SplashScreen(),
+      home: SplashScreen(),
     );
   }
 }

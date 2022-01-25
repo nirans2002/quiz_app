@@ -25,23 +25,22 @@ Future<dynamic> show_bottom_sheet_category(BuildContext context) {
             child: GridView.count(
               crossAxisCount: 2,
               children: [
-                Category_tile("javascript", "JavaScript", context,
-                    "assets/images/js.png"),
-                Category_tile(
-                    "mysql", "MySQL", context, "assets/images/mysql.png"),
-                Category_tile(
-                    "laravel", "Laravel", context, "assets/images/laravel.png"),
-                Category_tile(
-                    "laravel", "Laravel", context, "assets/images/laravel.png"),
                 Category_tile(
                     "linux", "Linux", context, "assets/images/linux.png"),
                 Category_tile(
-                    "wordpress", "WordPress", context, "assets/images/js.png"),
-                Category_tile("php", "PHP", context, "assets/images/js.png"),
-                Category_tile(
-                    "devops", "DevOps", context, "assets/images/js.png"),
+                    "bash", "Bash", context, "assets/images/linux.png"),
                 Category_tile(
                     "docker", "Docker", context, "assets/images/js.png"),
+                Category_tile(
+                    "sql", "MySQL", context, "assets/images/mysql.png"),
+                Category_tile(
+                    "cms", "CMS", context, "assets/images/laravel.png"),
+                Category_tile(
+                    "code", "Code", context, "assets/images/laravel.png"),
+                Category_tile(
+                    "devops", "DevOps", context, "assets/images/js.png"),
+                Category_tile("uncategorized", "Un Categorized", context,
+                    "assets/images/js.png"),
               ],
             ),
           ),

@@ -1,111 +1,106 @@
-class QstnModel {
-  int id;
-  String question;
-  String description;
-  // Answers answers;
-  String multiple_correct_answers;
-  CorrectAnswers correctanswers;
-  String correctanswer;
-  String explanation;
-  String tip;
-  List<Tags> tags;
-  String category;
-  String difficulty;
+import 'dart:convert';
 
-  QstnModel({
-    required this.id,
+List<Question> modelUserFromJson(String str) =>
+    List<Question>.from(json.decode(str).map((x) => Question.fromJson(x)));
+
+String modelUserToJson(List<Question> data) =>
+    json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+
+class Question {
+  String question;
+  Answers answers;
+  CorrectAnswers correctAnswers;
+  String? correctAnswer;
+
+  Question({
     required this.question,
-    required this.description,
-    required this.multiple_correct_answers,
-    required this.correctanswers,
-    required this.explanation,
-    required this.tip,
-    required this.category,
-    required this.difficulty,
-    // required this.answers,
-    required this.correctanswer,
-    required this.tags,
+    required this.answers,
+    required this.correctAnswer,
+    required this.correctAnswers,
   });
 
-  factory QstnModel.fromJson(Map<String, dynamic> json) {
-    return QstnModel(
-      id: json['id'],
-      question: json['question'],
-      description: json['description'],
-      multiple_correct_answers: json['multiple_correct_answers'],
-      correctanswers: json['correct_answers'],
-      explanation: json['explanation'],
-      tip: json['tip'],
-      category: json['category'],
-      difficulty: json['difficulty'],
-      // answers: json['answers'],
-      correctanswer: json['correct_answer'],
-      tags: json['tags'],
-    );
-  }
+  factory Question.fromJson(Map<String, dynamic> json) => Question(
+        question: json["question"],
+        answers: Answers.fromJson(json["answers"]),
+        correctAnswers: CorrectAnswers.fromJson(json["correct_answers"]),
+        correctAnswer: json["correct_answer"],
+      );
+
+  Map<String, dynamic> toJson() => {
+        "question": question,
+        "answers": answers.toJson(),
+        "correctAnswer": correctAnswer,
+      };
 }
 
-// class Answers {
-//   String answerA;
-//   String answerB;
-//   String answerC;
-//   String answerD;
-//   String? answerE;
-//   String? answerF;
+class Answers {
+  String? answerA;
+  String? answerB;
+  String? answerC;
+  String? answerD;
+  String? answerE;
+  String? answerF;
 
-//   Answers({
-//     required this.answerA,
-//     required this.answerB,
-//     required this.answerC,
-//     required this.answerD,
-//     required this.answerE,
-//     required this.answerF,
-//   });
+  Answers({
+    required this.answerA,
+    required this.answerB,
+    required this.answerC,
+    required this.answerD,
+    required this.answerE,
+    required this.answerF,
+  });
 
-//   factory Answers.fromJson(Map<String, dynamic> json) {
-//     return Answers(
-//       answerA: json['answer_a'],
-//       answerB: json['answer_b'],
-//       answerC: json['answer_c'],
-//       answerD: json['answer_d'],
-//       answerE: json['answer_e'],
-//       answerF: json['answer_f'],
-//     );
-//   }
-// }
+  factory Answers.fromJson(Map<String, dynamic> json) => Answers(
+        answerA: json["answer_a"],
+        answerB: json["answer_b"],
+        answerC: json["answer_c"],
+        answerD: json["answer_d"],
+        answerE: json["answer_e"],
+        answerF: json["answer_f"],
+      );
+
+  Map<String, dynamic> toJson() => {
+        "answer_a": answerA,
+        "answer_b": answerB,
+        "answer_c": answerC,
+        "answer_d": answerD,
+        "answer_e": answerE,
+        "answer_f": answerF,
+      };
+}
 
 class CorrectAnswers {
-  String answerACorrect;
-  String answerBCorrect;
-  String answerCCorrect;
-  String answerDCorrect;
-  String answerECorrect;
-  String answerFCorrect;
+  String answer_a_correct;
+  String answer_b_correct;
+  String answer_c_correct;
+  String answer_d_correct;
+  String answer_e_correct;
+  String answer_f_correct;
 
   CorrectAnswers({
-    required this.answerACorrect,
-    required this.answerBCorrect,
-    required this.answerCCorrect,
-    required this.answerDCorrect,
-    required this.answerECorrect,
-    required this.answerFCorrect,
+    required this.answer_a_correct,
+    required this.answer_b_correct,
+    required this.answer_c_correct,
+    required this.answer_d_correct,
+    required this.answer_e_correct,
+    required this.answer_f_correct,
   });
-  factory CorrectAnswers.fromJson(Map<String, dynamic> json) {
-    return CorrectAnswers(
-      answerACorrect: json['answer_a_correct'],
-      answerBCorrect: json['answer_b_correct'],
-      answerCCorrect: json['answer_c_correct'],
-      answerDCorrect: json['answer_d_correct'],
-      answerECorrect: json['answer_e_correct'],
-      answerFCorrect: json['answer_f_correct'],
-    );
-  }
-}
 
-class Tags {
-  final String name;
-  Tags({required this.name});
-  factory Tags.fromJson(Map<String, dynamic> json) {
-    return Tags(name: json['name']);
-  }
+  factory CorrectAnswers.fromJson(Map<String, dynamic> json) => CorrectAnswers(
+        answer_a_correct: json["answer_a_correct"],
+        answer_b_correct: json["answer_b_correct"],
+        answer_c_correct: json["answer_c_correct"],
+        answer_d_correct: json["answer_d_correct"],
+        answer_e_correct: json["answer_e_correct"],
+        answer_f_correct: json["answer_f_correct"],
+      );
+
+  Map<String, dynamic> toJson() => {
+        "answer_a_correct": answer_a_correct,
+        "answer_b_correct": answer_b_correct,
+        "answer_c_correct": answer_c_correct,
+        "answer_d_correct": answer_d_correct,
+        "answer_e_correct": answer_e_correct,
+        "answer_f_correct": answer_f_correct,
+      };
 }
