@@ -25,7 +25,7 @@ Future fetchData(listModel) async {
     //     'https://quizapi.io/api/v1/questions?apiKey=0VeurWECWRQgSX1Ib9DdCrVSsvkGH2TysmCJeg3p&category=$selected_category&difficulty=$selected_difficulty&limit=20'),
     // headers: {"Accept": "application/json"},
   );
-  print(response.statusCode);
+  // print(response.statusCode);
   if (response.statusCode == 200) {
     var data = json.decode(response.body);
     for (Map<String, dynamic> i in data) {
@@ -37,7 +37,7 @@ Future fetchData(listModel) async {
 
 String FindCorrectAnswers(CorrectAnswers correctAnswers) {
   String correct_option = '';
-  debugPrint('find correct answer');
+  // debugPrint('find correct answer');
   // debugPrint(correctAnswers.answer_a_correct);
   if (correctAnswers.answer_a_correct == "true") {
     correct_option = 'a';
@@ -52,6 +52,6 @@ String FindCorrectAnswers(CorrectAnswers correctAnswers) {
   } else if (correctAnswers.answer_f_correct == "true") {
     correct_option = 'f';
   }
-  debugPrint(correct_option);
+  // debugPrint(correct_option);
   return correct_option;
 }

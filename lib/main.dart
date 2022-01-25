@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app/screens/results_screen.dart';
-import 'package:quiz_app/services/api_try.dart';
-import 'screens/quiz_screen.dart';
 import 'theme/theme.dart';
 
 import 'screens/splash_screen.dart';

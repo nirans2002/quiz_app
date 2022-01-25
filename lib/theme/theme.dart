@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-//TODO: costumize colors and defaults
+//colors and defaults
 const primaryColor = Color(0xFF6066D0);
 const optionTileColor = Color(0xFF373B8F);
 const cardColor = Color(0xFF9E9E9E);

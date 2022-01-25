@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app/database/data_sample.dart';
 import 'package:quiz_app/screens/quiz_screen.dart';
 // import 'package:quiz_app/database/data_sample.dart';
 import 'package:quiz_app/theme/theme.dart';
@@ -20,7 +19,7 @@ class _ResultScreenState extends State<ResultScreen> {
   initState() {
     super.initState();
     // result = resultData;
-    debugPrint(resultData.toString());
+    // debugPrint(resultData.toString());
   }
 
   @override

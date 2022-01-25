@@ -63,7 +63,7 @@ class _Quiz_screenState extends State<Quiz_screen> {
 
     if (responseData.statusCode == 200) {
       final data = jsonDecode(responseData.body);
-      print(data);
+      // print(data);
       for (Map<String, dynamic> i in data) {
         dataList.add(Question.fromJson(i));
       }
@@ -77,7 +77,7 @@ class _Quiz_screenState extends State<Quiz_screen> {
 
   @override
   void initState() {
-    // TODO: implement initState
+    
     super.initState();
     getData();
     result = [];
@@ -112,8 +112,8 @@ class _Quiz_screenState extends State<Quiz_screen> {
       final milliseconds = duration.inMilliseconds + addMilliSeconds;
       final minutes = duration.inMinutes;
       if (milliseconds < 0) {
-        debugPrint("ended 1");
-        // TODO: finish
+        // debugPrint("ended 1");
+
         timer?.cancel();
         // checkAnswer();
         Finish();
@@ -169,7 +169,7 @@ class _Quiz_screenState extends State<Quiz_screen> {
     void incrementIndex() {
       setState(() {
         currentIndex < 19 ? currentIndex++ : Finish;
-        debugPrint(currentIndex.toString());
+        // debugPrint(currentIndex.toString());
         Question currentQuestionData = listModel[currentIndex];
       });
     }
@@ -184,7 +184,7 @@ class _Quiz_screenState extends State<Quiz_screen> {
 
 //check answer
     void checkAnswer() {
-      debugPrint('check called');
+      // debugPrint('check called');
       // String current_selected_option = choose()
 
       String current_correct_answer =

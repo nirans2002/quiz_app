@@ -16,7 +16,6 @@ class _StopWatchTimerPageState extends State<StopWatchTimerPage> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     reset();
     startTimer();
@@ -44,8 +43,8 @@ class _StopWatchTimerPageState extends State<StopWatchTimerPage> {
       final minutes = duration.inMinutes;
       if (minutes == 0 && seconds == 0 && milliseconds == 0) {}
       if (milliseconds < 0) {
-        debugPrint("ended 1");
-        // TODO: finish
+        // debugPrint("ended 1");
+        //
         timer?.cancel();
       } else {
         duration = Duration(milliseconds: milliseconds);
@@ -100,6 +99,4 @@ class _StopWatchTimerPageState extends State<StopWatchTimerPage> {
       ),
     ]);
   }
-
-  
 }

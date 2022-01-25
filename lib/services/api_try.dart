@@ -27,7 +27,7 @@ class _HomePageState extends State<HomePage> {
 
     if (responseData.statusCode == 200) {
       final data = jsonDecode(responseData.body);
-      print(data);
+      // print(data);
       for (Map<String, dynamic> i in data) {
         dataList.add(Question.fromJson(i));
       }
@@ -127,6 +127,6 @@ String FindCorrectAnswers(CorrectAnswers correctAnswers) {
   } else if (correctAnswers.answer_f_correct == "true") {
     correct_option = 'f';
   }
-  debugPrint(correct_option);
+  // debugPrint(correct_option);
   return correct_option;
 }
