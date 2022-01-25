@@ -1,17 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/database/data_sample.dart';
+import 'package:quiz_app/screens/quiz_screen.dart';
+// import 'package:quiz_app/database/data_sample.dart';
 import 'package:quiz_app/theme/theme.dart';
 
 class ResultScreen extends StatefulWidget {
-  const ResultScreen({Key? key}) : super(key: key);
+  ResultScreen({Key? key, required this.resultData}) : super(key: key);
+  final List resultData;
 
   @override
   _ResultScreenState createState() => _ResultScreenState();
 }
 
-List result = resultData;
+List resultData = result;
 
 class _ResultScreenState extends State<ResultScreen> {
+  // List result = [];
+  @override
+  initState() {
+    super.initState();
+    // result = resultData;
+    debugPrint(resultData.toString());
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,41 +40,54 @@ class _ResultScreenState extends State<ResultScreen> {
           ),
         ),
         body: SafeArea(
-          child: Column(
-            children: [
-              // Container(
-              //   child: Row(
-              //     mainAxisAlignment: MainAxisAlignment.center,
-              //     children: [
-              //       Text(
-              //         'You have scored:',
-              //         style: TextStyle(
-              //           fontSize: 25,
-              //         ),
-              //       ),
-              //     ],
-              //   ),
-              // ),
-              Container(
-                child: GridView.count(
-                  scrollDirection: Axis.vertical,
-                  shrinkWrap: true,
-                  crossAxisCount: 4,
-                  children: List.generate(result.length, (index) {
-                    return Center(
-                      child: Result_tile(index, result[index]),
-                    );
-                  }),
+          child: resultData.length == 0
+              ? Center(
+                  child: Text(
+                    "   ERROR DATA NOT FOUND  CONTACT \n   DEVELOPER FOR MORE DETAILS ",
+                    style: TextStyle(
+                      color: Colors.redAccent,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                )
+              : Column(
+                  children: [
+                    // Container(
+                    //   child: Row(
+                    //     mainAxisAlignment: MainAxisAlignment.center,
+                    //     children: [
+                    //       Text(
+                    //         'You have scored:',
+                    //         style: TextStyle(
+                    //           fontSize: 25,
+                    //         ),
+                    //       ),
+                    //     ],
+                    //   ),
+                    // ),
+                    Container(
+                      child: SingleChildScrollView(
+                        child: GridView.count(
+                          scrollDirection: Axis.vertical,
+                          shrinkWrap: true,
+                          crossAxisCount: 4,
+                          children: List.generate(resultData.length, (index) {
+                            return Center(
+                              child: Result_tile(index, resultData[index]),
+                            );
+                          }),
+                        ),
+                      ),
+                    ),
+                    // Container(
+                    //   child: RaisedButton(
+                    //     onPressed: () {},
+                    //     child: Text("Go to Home"),
+                    //   ),
+                    // )
+                  ],
                 ),
-              ),
-              // Container(
-              //   child: RaisedButton(
-              //     onPressed: () {},
-              //     child: Text("Go to Home"),
-              //   ),
-              // )
-            ],
-          ),
         ));
   }
 

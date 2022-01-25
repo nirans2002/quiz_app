@@ -7,6 +7,7 @@ import 'theme/theme.dart';
 import 'screens/splash_screen.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.dark,
       // themeMode: ThemeMode.light,
       // themeMode: ThemeMode.system,
-      home: Quiz_screen(),
+      home: SplashScreen(),
     );
   }
 }
