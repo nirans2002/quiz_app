@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/screens/quiz_screen.dart';
 import 'theme/theme.dart';
 
 import 'screens/splash_screen.dart';
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.dark,
       // themeMode: ThemeMode.light,
       // themeMode: ThemeMode.system,
-      home: SplashScreen(),
+      home: Quiz_screen(),
     );
   }
 }

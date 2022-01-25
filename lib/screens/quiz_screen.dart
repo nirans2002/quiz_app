@@ -77,7 +77,6 @@ class _Quiz_screenState extends State<Quiz_screen> {
 
   @override
   void initState() {
-    
     super.initState();
     getData();
     result = [];
@@ -153,8 +152,24 @@ class _Quiz_screenState extends State<Quiz_screen> {
       buildTimeCard(
         time: minutes,
       ),
+      Text(
+        ":",
+        style: TextStyle(
+            fontSize: 25,
+            fontWeight: FontWeight.bold,
+            // color: secondaryColor,
+            fontFamily: 'Ubuntu'),
+      ),
       buildTimeCard(
         time: seconds,
+      ),
+      Text(
+        ":",
+        style: TextStyle(
+            fontSize: 25,
+            fontWeight: FontWeight.bold,
+            // color: secondaryColor,
+            fontFamily: 'Ubuntu'),
       ),
       buildTimeCard(
         time: millisec,
